@@ -5,9 +5,9 @@ const fs = require('fs')
 const app = new Koa()
 const router = new Router()
 
-router.get('/getSchemeList', async ctx => {
-  await cors()
-  ctx.body = JSON.parse(fs.readFileSync('./static/schemeItem.json'))
+router.get('/api/getSchemeList', async ctx => {
+    await cors()
+    ctx.response.body = JSON.parse(fs.readFileSync('./static/schemeItem.json'))
 })
 
 app.use(router.routes()).use(router.allowedMethods())

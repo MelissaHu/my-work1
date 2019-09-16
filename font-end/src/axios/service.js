@@ -27,7 +27,10 @@ axios.interceptors.response.use(
 )
 
 export async function getNewTest () {
-  const { data } = await axios.get(`${API_HOST}getSchemeList`, {})
-  console.log(data)
-  return data
+  console.log('sfdsfdfsd')
+  await axios.get(`${API_HOST}getSchemeList`)
+    .then((response) => {
+      console.log('teste')
+    })
+  // return data
 }

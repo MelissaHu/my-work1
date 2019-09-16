@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="getNewJson">test</button>
+    <button @click="getNewTest">test</button>
   </div>
 </template>
 
@@ -13,12 +13,9 @@ export default {
     }
   },
   methods: {
-    getNewJson () {
-      this.getNewTest()
-    },
     async getNewTest () {
-      let data = await getNewTest()
-      console.log(data)
+      console.log('2')
+      await getNewTest()
     }
   }
 }
