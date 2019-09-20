@@ -1,9 +1,22 @@
 const Koa = require('koa')
 const Router = require('koa-router')
+const bodyParser = require('koa-bodyparser');
 const cors = require('koa2-cors')
 const fs = require('fs')
 const app = new Koa()
 const router = new Router()
+
+
+app.use(bodyParser())
+
+
+const User = require('./db.js');
+
+
+
+
+
+
 
 app.use(cors({
     origin: function(ctx) {
@@ -25,5 +38,19 @@ router.get('/getSchemeList', async ctx => {
     ctx.body = JSON.parse(fs.readFileSync('./static/schemeItem.json'))
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.use(router.routes()).use(router.allowedMethods())
-app.listen(3000)
+
+app.listen(8000)

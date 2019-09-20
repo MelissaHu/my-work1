@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_HOST = 'http://127.0.0.1:3000/'
+const API_HOST = 'http://127.0.0.1:8000/'
 // const MAMINCHAO_HOST = 'http://86.85.106.27:8082/'
 
 axios.defaults.headers.post['Content-Type'] =
@@ -28,9 +28,7 @@ axios.interceptors.response.use(
 
 export async function getNewTest () {
   console.log('sfdsfdfsd')
-  await axios.get(`${API_HOST}getSchemeList`)
-    .then((response) => {
-      console.log('teste')
-    })
+  const data = await axios.get(`${API_HOST}getSchemeList`)
+  console.log('data', data)
   // return data
 }
